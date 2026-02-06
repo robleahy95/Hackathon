@@ -1,0 +1,59 @@
+{
+  "test_payloads": [
+    {
+      "description": "Basic lead - hot priority",
+      "payload": {
+        "name": "Sarah Chen",
+        "company": "Intercom",
+        "priority": "Hot",
+        "notes": "Met at v0 hackathon. Interested in BD automation tools.",
+        "source": "v0 Hackathon Feb 2026"
+      }
+    },
+    {
+      "description": "Basic lead - warm priority",
+      "payload": {
+        "name": "James Miller",
+        "company": "Vercel",
+        "priority": "Warm",
+        "notes": "DevRel, building agent tools. Follow up about partnership.",
+        "source": "v0 Hackathon Feb 2026"
+      }
+    },
+    {
+      "description": "Basic lead - cool priority",
+      "payload": {
+        "name": "Alex Thompson",
+        "company": "Startup XYZ",
+        "priority": "Cool",
+        "notes": "Early stage, might be relevant in 6 months.",
+        "source": "v0 Hackathon Feb 2026"
+      }
+    },
+    {
+      "description": "Follow-up email trigger",
+      "payload": {
+        "action": "send_email",
+        "to_name": "John Smith",
+        "to_email": "john@example.com",
+        "subject": "Great chatting at the hackathon",
+        "body": "Hi John,\n\nGreat meeting you at the v0 hackathon today. I enjoyed our conversation about [topic].\n\nWould love to continue the discussion. Are you free for a quick call next week?\n\nBest,\nRobert"
+      }
+    },
+    {
+      "description": "Pipeline update",
+      "payload": {
+        "action": "update_pipeline",
+        "company": "Vercel",
+        "stage": "Meeting Scheduled",
+        "next_step": "Demo call Feb 10",
+        "notes": "They want to see the BD automation in action"
+      }
+    }
+  ],
+  "curl_examples": {
+    "log_lead": "curl -X POST \"YOUR_WEBHOOK_URL\" -H \"Content-Type: application/json\" -d '{\"name\":\"Sarah Chen\",\"company\":\"Intercom\",\"priority\":\"Hot\",\"notes\":\"Met at hackathon\"}'",
+    "send_email": "curl -X POST \"YOUR_WEBHOOK_URL\" -H \"Content-Type: application/json\" -d '{\"action\":\"send_email\",\"to_name\":\"John\",\"subject\":\"Following up\",\"body\":\"Great meeting you...\"}'",
+    "update_pipeline": "curl -X POST \"YOUR_WEBHOOK_URL\" -H \"Content-Type: application/json\" -d '{\"action\":\"update_pipeline\",\"company\":\"Vercel\",\"stage\":\"Meeting Scheduled\"}'"
+  }
+}
