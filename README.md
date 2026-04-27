@@ -13,7 +13,7 @@ You're at a conference. 20 conversations, scribbled notes, lost context. Follow-
 Tell Astra what happened in natural language. It handles the rest.
 
 ```
-You:   "Log Sarah from Intercom as a hot lead"
+You:   "Log Sarah from Intercom as a interested lead"
 Astra:  Confirms → Logs to Google Sheets → Done
 ```
 
